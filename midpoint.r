@@ -22,7 +22,7 @@ midpoint <- function(func, a, b, n=1000) {
 	stop("Please provide a valid number of midpoints")
     }
     dif <- 1/(2*n)
-    value <- mean(func(seq(a + dif, b - dif, by=1/n)))
+    value <- mean(func(seq(a + dif, b - dif, by=1/n))) * (b - a)
 
     # TODO: finish error implementation
     # error <- (optim(par=a, fn=func, method="Brent", lower=a, upper=b, hessian=TRUE))$hessian / (24 * n ^ 2) * (b -a)^2
