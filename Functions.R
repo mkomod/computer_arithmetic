@@ -92,7 +92,7 @@ montecarlo.int <- function(samplex, g, alpha){
   n <- length(samplex)
   est <- mean(g(samplex))
   variance <- var(g(samplex))
-  interval <- c(est - qnorm(con_level/2)*sqrt(variance/n), est + qnorm(1-(alpha/2))*sqrt(variance/n))
+  interval <- c(est - qnorm(1-(alpha/2))*sqrt(variance/n), est + qnorm(1-(alpha/2))*sqrt(variance/n))
   return(list("Estimate" = est, "Variance" = variance, "CI" = interval))
 }
 
